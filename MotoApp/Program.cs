@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using MotoApp;
 using MotoApp.Components.DataProviders;
 using MotoApp.Data;
@@ -10,10 +11,10 @@ services.AddSingleton<IApp, App>();
 services.AddSingleton<IRepository<Employee>>();
 services.AddSingleton<IRepository<Car>>();
 services.AddSingleton<ICarsProvider, CarsProvider>();
-services.AddDbContext<MotoAppDbContext>(options => options.);
+services.AddDbContext<MotoAppDbContext>(options => options.UseSqlServer("Data Source=.\\sqlexpress;Initial Catalog=TestStorage;Integrated Security=True; Trust Server Certificate=True"));
 
 var serviceprovider = services.BuildServiceProvider();
-var app = serviceprovider.GetService<IApp>();
+var app = serviceprovider.GetService<IApp>()!;
 app?.Run();
 
 //using MotoApp.Entities;
