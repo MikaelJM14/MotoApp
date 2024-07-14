@@ -2,8 +2,8 @@
 using Microsoft.Extensions.DependencyInjection;
 using MotoApp;
 using MotoApp.Components.CsvReader;
-using MotoApp.Data.Entities;
-using MotoApp.Data.Repositories;
+using MotoApp.DataAccsess.Data.Entities;
+using MotoApp.DataAccsess.Data.Repositories;
 
 var services = new ServiceCollection();
 services.AddSingleton<IApp, App>();

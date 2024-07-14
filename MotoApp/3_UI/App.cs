@@ -1,7 +1,7 @@
 ﻿
 using MotoApp;
 using MotoApp.Components.CsvReader;
-using MotoApp.Data.Entities;
+using MotoApp.DataAccsess.Data.Entities;
 using System.Globalization;
 
 public class App : IApp
